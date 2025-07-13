@@ -87,8 +87,8 @@ const Layout = ({ children, selectedSection, onSectionChange }) => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <header className="z-30 shadow-xl align-middle p-2 md:p-6 lg:p-8 xl:p-10 w-full flex-shrink-0" style={{background: 'linear-gradient(to right, #020B17, #0a1a2e, #1a2e4a)'}}>
-          <div className="flex flex-col sm:flex-row items-center px-2 sm:px-4 py-0 justify-between gap-4 w-full">
+        <header className="z-30 shadow-xl align-middle p-0   md:p-6 lg:p-4  xl:p-10 w-full flex-shrink-0" style={{background: 'linear-gradient(to right, #020B17, #0a1a2e, #1a2e4a)'}}>
+          <div className="flex  flex-col sm:flex-row items-center px-2 sm:px-4 py-0 justify-between gap-4 w-full">
             <div className='flex justify-center items-center'>
               <h1 className="text-transparent bg-clip-text text-xl text-center sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide drop-shadow-lg" style={{backgroundImage: 'linear-gradient(to right, #ffffff, #d1d5db, #9ca3af)'}}>
                   WELCOME TO GUEST ROOM MANAGEMENT
