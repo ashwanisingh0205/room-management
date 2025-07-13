@@ -17,50 +17,27 @@ const rooms = [
 
 export default function Rooms() {
   return (
-    <div className="min-h-[80vh] bg-[#020B17] flex flex-col items-center justify-center py-4 sm:py-8 px-2">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white md-mb-12 xl-mb-16 lg-mb-14 sm:mb-8">Total Rooms: <span className="text-yellow-400">{rooms.length}</span></h2>
-      {/* First row: 2 rooms */}
-      <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-4 w-full max-w-2xl">
-        {rooms.slice(0, 2).map((room) => (
+    <div className="min-h-[90vh] px-4 py-10 bg-gradient-to-br from-[#2F323B] to-[#1d1f25] text-white backdrop-blur-2xl">
+      <h2 className="text-3xl font-bold text-center mb-10">
+        Total Rooms: <span className="text-yellow-400">{rooms.length}</span>
+      </h2>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {rooms.map((room) => (
           <div
             key={room.name}
-            className={
+            className={`rounded-xl h-28 flex flex-col items-center justify-center text-center transition-all duration-300 border bg-white/5 backdrop-blur-sm ${
               room.priority === 'high'
-                ? 'rounded-2xl bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-600 flex flex-col items-center justify-center shadow-2xl border-4 border-yellow-400 text-gray-900 text-lg sm:text-2xl md:text-3xl font-bold relative h-20 sm:h-24 md:h-32 w-full sm:w-40 md:w-48'
-                : 'rounded-2xl bg-green-300 flex items-center justify-center shadow-lg border-2 border-green-700 text-yellow-900 text-lg sm:text-2xl md:text-3xl font-semibold h-20 sm:h-24 md:h-32 w-full sm:w-40 md:w-48'
-            }
+                ? 'border-yellow-400 text-yellow-300 hover:shadow-yellow-400/40'
+                : 'border-green-500 text-green-300 hover:shadow-green-300/30'
+            } hover:scale-105 shadow-md`}
           >
-            {room.name}
-          </div>
-        ))}
-      </div>
-      {/* Second row: 5 rooms */}
-      <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-4 w-full max-w-4xl">
-        {rooms.slice(2, 7).map((room) => (
-          <div
-            key={room.name}
-            className={
-              room.priority === 'high'
-                ? 'rounded-2xl bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-600 flex flex-col items-center justify-center shadow-2xl border-4 border-yellow-400 text-gray-900 text-lg sm:text-2xl md:text-3xl font-bold relative h-20 sm:h-24 md:h-32 w-full sm:w-40 md:w-48'
-                : 'rounded-2xl bg-green-300 flex items-center justify-center shadow-lg border-2 border-green-700 text-yellow-900 text-lg sm:text-2xl md:text-3xl font-semibold h-20 sm:h-24 md:h-32 w-full sm:w-40 md:w-48'
-            }
-          >
-            {room.name}
-          </div>
-        ))}
-      </div>
-      {/* Third row: 5 rooms */}
-      <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 w-full max-w-4xl">
-        {rooms.slice(7).map((room) => (
-          <div
-            key={room.name}
-            className={
-              room.priority === 'high'
-                ? 'rounded-2xl bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-600 flex flex-col items-center justify-center shadow-2xl border-4 border-yellow-400 text-gray-900 text-lg sm:text-2xl md:text-3xl font-bold relative h-20 sm:h-24 md:h-32 w-full sm:w-40 md:w-48'
-                : 'rounded-2xl bg-green-300 flex items-center justify-center shadow-lg border-2 border-green-700 text-yellow-900 text-lg sm:text-2xl md:text-3xl font-semibold h-20 sm:h-24 md:h-32 w-full sm:w-40 md:w-48'
-            }
-          >
-            {room.name}
+            <span className="text-lg font-semibold">{room.name}</span>
+            {room.priority === 'high' && (
+              <span className="mt-1 text-xs bg-yellow-500 text-black px-2 py-0.5 rounded-full font-bold uppercase tracking-wider shadow-sm">
+                High
+              </span>
+            )}
           </div>
         ))}
       </div>
